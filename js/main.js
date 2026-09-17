@@ -448,6 +448,15 @@ function renderLanguages() {
     `).join("");
 }
 
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 function initContactForm() {
     const form = document.getElementById("contactForm");
     const feedback = document.getElementById("contactFeedback");
@@ -455,12 +464,21 @@ function initContactForm() {
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
+
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn ? submitBtn.innerHTML : "TRANSMIT MESSAGE →";
+
+        const nameVal = document.getElementById("contactName")?.value || "";
+        const emailVal = document.getElementById("contactEmail")?.value || "";
+        const msgVal = document.getElementById("contactMsg")?.value || "";
 
         if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.innerHTML = `TRANSMITTING...`;
+        }
+
+        if (feedback) {
+            feedback.style.display = "none";
         }
 
         const formData = new FormData(form);
@@ -479,10 +497,11 @@ function initContactForm() {
                 if (feedback) {
                     feedback.style.display = "block";
                     feedback.innerHTML = `
-                        <div class="term-line-success" style="background:#0B0E14;padding:1rem;border:1px solid var(--htb-green);border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;">
-                            [+] TRANSMISSION DISPATCHED TO KINZA BUGHIO!<br>
-                            [+] Status: 200 OK via Formspree Gateway<br>
-                            [+] Thank you! Your message has been sent successfully.
+                        <div class="term-line-success" style="background:#0B0E14;padding:1.25rem;border:1px solid var(--htb-green);border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;line-height:1.6;">
+                            <div style="font-weight:700;color:var(--htb-green);margin-bottom:0.5rem;font-size:0.95rem;">[+] TRANSMISSION DISPATCHED TO KINZA BUGHIO!</div>
+                            <div>[+] <strong>Sender:</strong> ${escapeHtml(nameVal)} &lt;${escapeHtml(emailVal)}&gt;</div>
+                            <div style="margin-top:0.3rem;">[+] <strong>Message:</strong> "${escapeHtml(msgVal)}"</div>
+                            <div style="color:var(--text-muted);font-size:0.75rem;margin-top:0.5rem;border-top:1px solid var(--border-color, #1F2E44);padding-top:0.4rem;">[✓] Status: 200 OK • Delivered to kinzapython@gmail.com</div>
                         </div>
                     `;
                 }
@@ -494,14 +513,20 @@ function initContactForm() {
                     feedback.style.display = "block";
                     feedback.innerHTML = `
                         <div style="background:#0B0E14;padding:1rem;border:1px solid var(--diff-hard, #FF3E3E);border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;color:var(--diff-hard, #FF3E3E);">
-                            [!] Transmission Error: ${errMsg}
+                            [!] Transmission Error: ${escapeHtml(errMsg)}
                         </div>
                     `;
                 }
             }
         } catch (err) {
-            // If AJAX is blocked (e.g. running from local file://), submit via standard HTML form
-            HTMLFormElement.prototype.submit.call(form);
+            if (feedback) {
+                feedback.style.display = "block";
+                feedback.innerHTML = `
+                    <div style="background:#0B0E14;padding:1rem;border:1px solid var(--diff-hard, #FF3E3E);border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;color:var(--diff-hard, #FF3E3E);">
+                        [!] Network error: Could not reach gateway. Please check your internet connection.
+                    </div>
+                `;
+            }
         } finally {
             if (submitBtn) {
                 submitBtn.disabled = false;
