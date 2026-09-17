@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinza Bughio // ICT & Computer Science Teacher | Cybersecurity Analyst</title>
+    <meta name="description" content="Official portfolio of Kinza Bughio - ICT & Computer Science Teacher, Cybersecurity Analyst, and BS Cyber Security student at MUET Jamshoro.">
+    <meta name="theme-color" content="#0B0E14">
+
+    <!-- Google Material Symbols & Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/terminal.css">
+
+    <!-- Favicon (HTB Style Hex Cube) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><polygon points=%2250,5 95,28 95,72 50,95 5,72 5,28%22 fill=%22%239FEF00%22/><polygon points=%2250,25 75,38 75,62 50,75 25,62 25,38%22 fill=%22%230B0E14%22/></svg>">
+</head>
+<body>
+
+    <!-- Matrix Background & Cyber Grid -->
+    <canvas id="matrixCanvas"></canvas>
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- ==========================================================================
+         TOP NAVIGATION HUD
+         ========================================================================== -->
+    <nav class="htb-navbar">
+        <div class="container nav-content">
+            <a href="#profile" class="nav-brand">
+                <div class="htb-logo-cube">
+                    <div class="htb-logo-cube-inner"></div>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">KINZA BUGHIO</span>
+                    <span class="brand-rank">ICT & CS TEACHER // CYBER ANALYST</span>
+                </div>
+            </a>
+
+            <div class="nav-vpn-status">
+                <span class="status-dot"></span>
+                <span>STATUS: ONLINE // HYDERABAD, PK</span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#profile" class="nav-link active">[01_PROFILE]</a></li>
+                <li><a href="#experience" class="nav-link">[02_EXPERIENCE]</a></li>
+                <li><a href="#projects" class="nav-link">[03_PROJECTS]</a></li>
+                <li><a href="#skills" class="nav-link">[04_SKILLS]</a></li>
+                <li><a href="#certs" class="nav-link">[05_CERTS]</a></li>
+                <li><a href="#terminal" class="nav-link">[06_TERMINAL]</a></li>
+                <li><a href="#contact" class="nav-link">[07_CONTACT]</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-btn-icon" id="soundToggleBtn" title="Toggle Synthesized Audio Feedback">
+                    <span class="material-symbols-outlined" style="font-size:1.1rem;">volume_off</span> SFX: OFF
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         HERO / OPERATOR CARD SECTION
+         ========================================================================== -->
+    <header class="hero-section" id="profile">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left: Operator Profile Card -->
+                <div class="player-card">
+                    <div class="card-hud-header">
+                        <div class="card-hud-id">OPERATOR ID: KINZA-BUGHIO // MUET JAMSHORO (2022–2026)</div>
+                        <div class="card-hud-badges">
+                            <span class="badge-tag badge-omniscient">TEACHER</span>
+                            <span class="badge-tag badge-vip">SECURITY</span>
+                        </div>
+                    </div>
+
+                    <div class="player-profile-row">
+                        <div class="avatar-wrapper">
+                            <div class="avatar-hex">
+                                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80" alt="Kinza Bughio Avatar">
+                            </div>
+                            <div class="avatar-overlay-rank">ACTIVE</div>
+                        </div>
+
+                        <div class="player-details">
+                            <h1>
+                                <span class="handle-glow">Kinza Bughio</span>
+                            </h1>
+                            <div class="player-title">
+                                <span id="typewriterText"></span><span class="typewriter-cursor"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="player-bio">
+                        Dedicated and qualified ICT & Computer Science Teacher with 3+ years of hands-on experience delivering engaging instruction in computer science, ICT, programming, and cybersecurity to university-level and vocational students. Skilled at breaking down complex technical concepts including networking, ethical hacking, and secure coding into accessible, practical lessons. Track record of improving student comprehension by 35% and achieving 90%+ student satisfaction. Holds a Google Cybersecurity Professional Certificate and Certified Ethical Hacker (Credly) credentials. Proficient in computer and ICT skills, passionate about teaching and student development, and committed to maintaining high educational standards as a responsible, punctual team player.
+                    </p>
+
+                    <!-- Education Bar -->
+                    <div class="rank-progress-block">
+                        <div class="rank-labels">
+                            <span class="rank-curr" style="display:inline-flex;align-items:center;gap:0.3rem;">
+                                <span class="material-symbols-outlined" style="font-size:1.1rem;">school</span>
+                                BS IN CYBER SECURITY
+                            </span>
+                            <span class="rank-next">2022 – 2026</span>
+                        </div>
+                        <div style="font-family:var(--font-mono);font-size:0.82rem;color:#FFF;margin-top:0.25rem;">
+                            Mehran University of Engineering and Technology (MUET), Jamshoro
+                        </div>
+                        <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.35rem;line-height:1.4;">
+                            <strong style="color:var(--htb-cyan);">Coursework:</strong> Network Security, Ethical Hacking, Digital Forensics, Cryptography, Operating Systems, Web Application Security, Database Management.
+                        </div>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="hero-cta-group">
+                        <a href="#contact" class="htb-btn htb-btn-primary">
+                            <span class="material-symbols-outlined" style="font-size:1.1rem;">send</span>
+                            CONNECT / HIRE
+                        </a>
+                        <a href="#projects" class="htb-btn htb-btn-secondary">
+                            <span class="material-symbols-outlined" style="font-size:1.1rem;">code</span>
+                            VIEW 9 PROJECTS
+                        </a>
+                        <a href="#terminal" class="htb-btn htb-btn-accent">
+                            <span class="material-symbols-outlined" style="font-size:1.1rem;">terminal</span>
+                            SPAWN TERMINAL
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Quick Dossier & Telemetry -->
+                <div class="spec-telemetry" style="display:flex;flex-direction:column;gap:1.5rem;">
+                    <div class="player-card" style="padding:1.5rem;">
+                        <div class="card-hud-header" style="margin-bottom:1rem;">
+                            <span class="card-hud-id">CONTACT TELEMETRY</span>
+                            <span class="flag-badge flag-pwned" style="font-size:0.65rem;">VERIFIED</span>
+                        </div>
+                        <div style="font-family:var(--font-mono);font-size:0.84rem;line-height:2.2;color:var(--text-secondary);">
+                            <div style="display:flex;align-items:center;gap:0.4rem;">
+                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-green);">mail</span>
+                                <span>EMAIL:</span> 
+                                <a href="mailto:kinzapython@gmail.com" style="color:var(--htb-green);">kinzapython@gmail.com</a>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:0.4rem;">
+                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-green);">location_on</span>
+                                <span>LOCATION:</span> 
+                                <span style="color:#FFF;">Hyderabad, Sindh, Pakistan</span>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:0.4rem;">
+                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-cyan);">terminal</span>
+                                <span>GITHUB:</span> 
+                                <a href="https://github.com/kinza099" target="_blank" style="color:var(--htb-cyan);">github.com/kinza099</a>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:0.4rem;">
+                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-cyan);">business_center</span>
+                                <span>LINKEDIN:</span> 
+                                <a href="https://linkedin.com/in/kinza-bughio-782777279" target="_blank" style="color:var(--htb-cyan);">linkedin.com/in/kinza-bughio-782777279</a>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:0.4rem;">
+                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-green);">verified</span>
+                                <span>EXPERIENCE:</span> 
+                                <span style="color:var(--htb-green);">3+ Years Teaching & Tech Roles</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="player-card" style="padding:1.5rem;background:#0D1117;">
+                        <div class="card-hud-header" style="margin-bottom:0.75rem;">
+                            <span class="card-hud-id">FAST TERMINAL SHELL</span>
+                            <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--htb-green);">BASH 5.2</span>
+                        </div>
+                        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">
+                            Run automated queries against Kinza's profile in the interactive terminal:
+                        </p>
+                        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                            <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('whoami');">whoami</button>
+                            <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('experience');">experience</button>
+                            <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('projects');">projects</button>
+                            <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('certs');">certs</button>
+                            <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('nmap');">nmap scan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Ribbon -->
+            <div class="stats-ribbon">
+                <div class="stats-grid" id="statsGrid">
+                    <!-- Populated via main.js with Google Material Icons -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         WORK EXPERIENCE (ALL 5 ROLES)
+         ========================================================================== -->
+    <section class="section-wrapper" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <span class="section-tag">[02 // WORK EXPERIENCE & ROLES]</span>
+                    <h2 class="section-heading">Professional Experience</h2>
+                    <p class="section-desc">University-level tutoring, national technical training instruction, cybersecurity internships, and web development.</p>
+                </div>
+            </div>
+
+            <div class="experience-list" id="experienceContainer">
+                <!-- Populated via main.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS PORTFOLIO (ALL 9 PROJECTS)
+         ========================================================================== -->
+    <section class="section-wrapper" id="projects" style="background:rgba(17, 25, 39, 0.4);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <span class="section-tag">[03 // TECHNICAL PROJECTS]</span>
+                    <h2 class="section-heading">Technical Projects Portfolio</h2>
+                    <p class="section-desc">Security tools, educational demos, Python Flask systems, and full-stack PHP/MySQL platforms from CV.</p>
+                </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">ALL PROJECTS (9)</button>
+                <button class="filter-btn" data-filter="Cybersecurity">CYBERSECURITY</button>
+                <button class="filter-btn" data-filter="Flask">PYTHON & FLASK</button>
+                <button class="filter-btn" data-filter="PHP">PHP & MYSQL</button>
+                <button class="filter-btn" data-filter="AI">AI & OPENCV</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Populated via main.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS INVENTORY
+         ========================================================================== -->
+    <section class="section-wrapper" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <span class="section-tag">[04 // SKILLS INVENTORY]</span>
+                    <h2 class="section-heading">Technical & Teaching Skills</h2>
+                    <p class="section-desc">Full breakdown of technical proficiencies, cybersecurity tools, and instructional capabilities from CV.</p>
+                </div>
+            </div>
+
+            <div class="skills-container" id="skillsContainer">
+                <!-- Populated via main.js with Google Material Icons -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CERTIFICATES (ALL 12 FROM CV)
+         ========================================================================== -->
+    <section class="section-wrapper" id="certs" style="background:rgba(17, 25, 39, 0.4);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <span class="section-tag">[05 // ACCREDITED CREDENTIALS]</span>
+                    <h2 class="section-heading">Certifications & Learning Paths</h2>
+                    <p class="section-desc">12 verified credentials across Google, Credly, TryHackMe, HackerRank, MUET, and the U.S. State Department.</p>
+                </div>
+            </div>
+
+            <div class="certs-grid" id="certsGrid">
+                <!-- Populated via main.js with Google Material Icons -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE IN-BROWSER TERMINAL
+         ========================================================================== -->
+    <section class="section-wrapper terminal-section" id="terminal">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <span class="section-tag">[06 // INTERACTIVE SHELL]</span>
+                    <h2 class="section-heading">In-Browser Terminal Emulator</h2>
+                    <p class="section-desc">Interact directly with Kinza's command-line interface to inspect education, experience, and projects.</p>
+                </div>
+            </div>
+
+            <!-- Quick command triggers -->
+            <div class="terminal-quick-cmds">
+                <span class="quick-cmd-label">QUICK COMMANDS:</span>
+                <button class="quick-cmd-btn" data-cmd="help">help</button>
+                <button class="quick-cmd-btn" data-cmd="whoami">whoami</button>
+                <button class="quick-cmd-btn" data-cmd="education">education</button>
+                <button class="quick-cmd-btn" data-cmd="experience">experience</button>
+                <button class="quick-cmd-btn" data-cmd="projects">projects</button>
+                <button class="quick-cmd-btn" data-cmd="skills">skills</button>
+                <button class="quick-cmd-btn" data-cmd="certs">certs</button>
+                <button class="quick-cmd-btn" data-cmd="nmap">nmap</button>
+                <button class="quick-cmd-btn" data-cmd="contact">contact</button>
+                <button class="quick-cmd-btn" data-cmd="clear">clear</button>
+            </div>
+
+            <!-- Terminal Window -->
+            <div class="terminal-window" id="terminalContainer">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="terminal-btn btn-close" onclick="window.terminal.cmdClear()"></span>
+                        <span class="terminal-btn btn-minimize"></span>
+                        <span class="terminal-btn btn-maximize"></span>
+                    </div>
+                    <div class="terminal-title">
+                        <span>kinza@htb-terminal: ~ (bash 5.2)</span>
+                    </div>
+                    <div class="terminal-tabs">
+                        <span class="term-tab">bash</span>
+                        <span class="term-tab" style="color:var(--text-muted);">zsh</span>
+                    </div>
+                </div>
+
+                <div class="terminal-body" id="terminalBody">
+                    <div id="terminalOutput"></div>
+                    <div class="terminal-input-row">
+                        <div class="term-prompt">
+                            <span class="term-prompt-user">kinza</span>@<span class="term-prompt-host">htb-terminal</span>:<span class="term-prompt-char">~$</span>
+                        </div>
+                        <input type="text" id="terminalInput" class="term-input" autocomplete="off" spellcheck="false" placeholder="Type command here (e.g. help, whoami, projects, experience)..." autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & LANGUAGES
+         ========================================================================== -->
+    <section class="section-wrapper" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <span class="section-tag">[07 // DIRECT COMMUNICATION]</span>
+                    <h2 class="section-heading">Contact & Connect</h2>
+                    <p class="section-desc">Reach out for teaching appointments, cybersecurity positions, training workshops, or software development.</p>
+                </div>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Left: Form -->
+                <div class="contact-terminal-box">
+                    <div class="contact-cmd-lead">
+                        $ mail -s "Teaching / Cyber Opportunity" kinzapython@gmail.com
+                    </div>
+
+                    <form id="contactForm" action="https://formspree.io/f/mrpbgqop" method="POST">
+                        <div class="form-group">
+                            <label class="form-label" for="contactName">// YOUR NAME</label>
+                            <input type="text" id="contactName" class="form-input" placeholder="e.g., Department Head / Recruiter" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="contactEmail">// YOUR EMAIL</label>
+                            <input type="email" id="contactEmail" class="form-input" placeholder="e.g., academic@institution.edu.pk" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="contactMsg">// MESSAGE</label>
+                            <textarea id="contactMsg" class="form-textarea" placeholder="Send a message regarding teaching roles, cybersecurity opportunities, or academic collaborations..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="htb-btn htb-btn-primary" style="width:100%;justify-content:center;">
+                            TRANSMIT MESSAGE →
+                        </button>
+                    </form>
+
+                    <div id="contactFeedback" style="display:none;margin-top:1.25rem;"></div>
+                </div>
+
+                <!-- Right: Information & Languages (Phone number removed) -->
+                <div class="contact-info-panel">
+                    <div>
+                        <div class="contact-card-item">
+                            <div class="contact-icon">
+                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--htb-green);">mail</span>
+                            </div>
+                            <div>
+                                <div class="contact-label">EMAIL ADDRESS</div>
+                                <a href="mailto:kinzapython@gmail.com" class="contact-val">kinzapython@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card-item">
+                            <div class="contact-icon">
+                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--htb-green);">location_on</span>
+                            </div>
+                            <div>
+                                <div class="contact-label">LOCATION</div>
+                                <span class="contact-val">Hyderabad, Sindh, Pakistan</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-card-item">
+                            <div class="contact-icon">
+                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--htb-cyan);">business_center</span>
+                            </div>
+                            <div>
+                                <div class="contact-label">LINKEDIN PROFILE</div>
+                                <a href="https://linkedin.com/in/kinza-bughio-782777279" target="_blank" class="contact-val">linkedin.com/in/kinza-bughio-782777279</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card-item">
+                            <div class="contact-icon">
+                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--htb-cyan);">terminal</span>
+                            </div>
+                            <div>
+                                <div class="contact-label">GITHUB REPOSITORIES</div>
+                                <a href="https://github.com/kinza099" target="_blank" class="contact-val">github.com/kinza099</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div style="margin-top:1rem;">
+                        <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--htb-green);margin-bottom:0.5rem;text-transform:uppercase;display:flex;align-items:center;gap:0.3rem;">
+                            <span class="material-symbols-outlined" style="font-size:1rem;">translate</span>
+                            LANGUAGES PROFICIENCY:
+                        </div>
+                        <div id="languagesList">
+                            <!-- Populated via main.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="htb-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="htb-logo-cube" style="width:24px;height:24px;">
+                        <div class="htb-logo-cube-inner" style="width:12px;height:12px;"></div>
+                    </div>
+                    <span>KINZA BUGHIO // ICT & COMPUTER SCIENCE TEACHER</span>
+                </div>
+                <div class="footer-meta">
+                    THEME: HACK THE BOX • GROUNDED IN OFFICIAL CV
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>BS CYBER SECURITY (2022–2026) • MEHRAN UNIVERSITY OF ENGINEERING AND TECHNOLOGY JAMSHORO</span>
+                <span>STATUS: 200 OK</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         PROJECT DETAILS MODAL
+         ========================================================================== -->
+    <div class="htb-modal-backdrop" id="htbModalBackdrop">
+        <div class="htb-modal" id="htbModalContent">
+            <!-- Injected via main.js -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
