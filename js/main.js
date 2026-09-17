@@ -451,26 +451,63 @@ function renderLanguages() {
 function initContactForm() {
     const form = document.getElementById("contactForm");
     const feedback = document.getElementById("contactFeedback");
-    if (!form || !feedback) return;
+    if (!form) return;
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const name = document.getElementById("contactName")?.value;
-        const email = document.getElementById("contactEmail")?.value;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn ? submitBtn.innerHTML : "TRANSMIT MESSAGE →";
 
-        if (window.soundFX) window.soundFX.playSuccess();
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `TRANSMITTING...`;
+        }
 
-        feedback.style.display = "block";
-        feedback.innerHTML = `
-            <div class="term-line-success" style="background:#0B0E14;padding:1rem;border:1px solid var(--htb-green);border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;">
-                [+] TRANSMISSION DISPATCHED TO KINZA BUGHIO!<br>
-                [+] Sender: ${name} (${email})<br>
-                [+] Direct Email: kinzapython@gmail.com<br>
-                [+] Thank you for reaching out!
-            </div>
-        `;
+        const formData = new FormData(form);
 
-        form.reset();
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+                if (window.soundFX) window.soundFX.playSuccess();
+                if (feedback) {
+                    feedback.style.display = "block";
+                    feedback.innerHTML = `
+                        <div class="term-line-success" style="background:#0B0E14;padding:1rem;border:1px solid var(--htb-green);border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;">
+                            [+] TRANSMISSION DISPATCHED TO KINZA BUGHIO!<br>
+                            [+] Status: 200 OK via Formspree Gateway<br>
+                            [+] Thank you! Your message has been sent successfully.
+                        </div>
+                    `;
+                }
+                form.reset();
+            } else {
+                const data = await response.json().catch(() => ({}));
+                const errMsg = (data && data.errors) ? data.errors.map(err => err.message).join(", ") : "Unable to deliver message at this time.";
+                if (feedback) {
+                    feedback.style.display = "block";
+                    feedback.innerHTML = `
+                        <div style="background:#0B0E14;padding:1rem;border:1px solid var(--diff-hard, #FF3E3E);border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;color:var(--diff-hard, #FF3E3E);">
+                            [!] Transmission Error: ${errMsg}
+                        </div>
+                    `;
+                }
+            }
+        } catch (err) {
+            // If AJAX is blocked (e.g. running from local file://), submit via standard HTML form
+            HTMLFormElement.prototype.submit.call(form);
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        }
     });
 }
 
