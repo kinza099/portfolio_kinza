@@ -321,15 +321,44 @@ function initProgressBars() {
 }
 
 // ==========================================================================
-// 10. SMOOTH MOBILE NAV — close on link click
+// 10. SMOOTH MOBILE NAV — close on link click, outside click & toggle icon
 // ==========================================================================
 function initMobileNavClose() {
     const navLinks = document.getElementById('navLinks');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
     if (!navLinks) return;
+
+    const iconSpan = mobileBtn ? mobileBtn.querySelector('.material-symbols-outlined') : null;
+
+    const updateIcon = () => {
+        if (!iconSpan) return;
+        if (navLinks.classList.contains('mobile-open')) {
+            iconSpan.textContent = 'close';
+        } else {
+            iconSpan.textContent = 'menu';
+        }
+    };
+
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            setTimeout(updateIcon, 10);
+        });
+    }
+
     navLinks.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('mobile-open');
+            updateIcon();
         });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('mobile-open')) {
+            if (!navLinks.contains(e.target) && !mobileBtn?.contains(e.target)) {
+                navLinks.classList.remove('mobile-open');
+                updateIcon();
+            }
+        }
     });
 }
 
