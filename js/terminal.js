@@ -152,8 +152,8 @@ class HtbTerminal {
  |_|\\_\\_|_| |_/___\\__,_| |____/ \\__,_|\\__, |_| |_|_|\\___/ 
                                        |___/               
  ==========================================================
- INSTRUCTOR : KINZA BUGHIO
- ROLE       : ICT & Computer Science Teacher | Cybersecurity Analyst
+ OPERATOR   : KINZA BUGHIO
+ ROLE       : Cybersecurity Analyst
  DEGREE     : BS Cyber Security @ MUET Jamshoro (2022-2026)
  Type <span class="term-line-success">help</span> to view all commands.
 `;
@@ -272,7 +272,7 @@ Email     : <a href="mailto:${p.email}" style="color:var(--htb-green);">${p.emai
 Location  : <span style="color:#FFF;">${p.location}</span>
 LinkedIn  : <a href="${p.socials.linkedin}" target="_blank" style="color:var(--htb-cyan);">${p.socials.linkedin}</a>
 GitHub    : <a href="${p.socials.github}" target="_blank" style="color:var(--htb-cyan);">${p.socials.github}</a>
-Languages : English (Full Professional) | Urdu (Fluent) | Sindhi (Native)
+Languages : English (Full Professional) | Urdu (Fluent)
 ------------------------------------------------------------`;
         this.println(text);
     }

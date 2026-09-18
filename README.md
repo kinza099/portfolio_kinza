@@ -8,7 +8,7 @@ A modern, responsive, high-performance **Hack The Box (HTB)** themed portfolio s
 
 ### 1. Profile & Academics
 - **Full Name**: Kinza Bughio
-- **Professional Title**: ICT & Computer Science Teacher | Cybersecurity Analyst
+- **Professional Title**: Cybersecurity Analyst
 - **Contact**: `kinzapython@gmail.com` | Hyderabad, Sindh, Pakistan
 - **Profiles**: [linkedin.com/in/kinza-bughio-782777279](https://linkedin.com/in/kinza-bughio-782777279) | [github.com/kinza099](https://github.com/kinza099)
 - **Education**:

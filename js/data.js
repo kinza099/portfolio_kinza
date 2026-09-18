@@ -1,5 +1,5 @@
 /**
- * Portfolio Data Store - 100% Grounded in Kinza Bughio's CV (Downloads/CV/Kinza_Bughio_CV.pdf)
+ * Portfolio Data Store - Grounded in Kinza Bughio's CV (AS cybersecurity_analyst/Kinza_Bughio.docx)
  * Strictly authentic data - No additional or fabricated information.
  */
 
@@ -7,14 +7,14 @@ const HTB_DATA = {
     profile: {
         name: "Kinza Bughio",
         handle: "kinza099",
-        title: "ICT & Computer Science Teacher | Cybersecurity Analyst",
+        title: "Cybersecurity Analyst & Instructor",
         email: "kinzapython@gmail.com",
         location: "Hyderabad, Sindh, Pakistan",
         degree: "Bachelor of Science in Cyber Security",
         university: "Mehran University of Engineering and Technology (MUET), Jamshoro",
         duration: "2022 – 2026",
         coursework: "Network Security, Ethical Hacking, Digital Forensics, Cryptography, Operating Systems, Web Application Security, Database Management",
-        bio: "Dedicated and qualified ICT & Computer Science Teacher with 3+ years of hands-on experience delivering engaging instruction in computer science, ICT, programming, and cybersecurity to university-level and vocational students. Skilled at breaking down complex technical concepts including networking, ethical hacking, and secure coding into accessible, practical lessons. Track record of improving student comprehension by 35% and achieving 90%+ student satisfaction. Holds a Google Cybersecurity Professional Certificate and Certified Ethical Hacker (Credly) credentials. Proficient in computer and ICT skills, passionate about teaching and student development, and committed to maintaining high educational standards as a responsible, punctual team player.",
+        bio: "Detail-oriented Cybersecurity Analyst with 3+ years of hands-on experience across network security, ethical hacking, penetration testing, and secure application development. Skilled in identifying vulnerabilities, analyzing security risks, and applying industry-standard tools — including Nmap, Burp Suite, Wireshark, Metasploit, and Kali Linux — to strengthen system and application security. Strong foundation in the OWASP Top 10, digital forensics, and secure coding practices (input validation, session management, CSRF/SQLi/XSS prevention), backed by a Bachelor's degree in Cyber Security. Holds a Google Cybersecurity Professional Certificate and Certified Ethical Hacker (Credly) credentials. Proven ability to translate complex security concepts into clear, actionable guidance, with a track record of improving audience comprehension by 35% and achieving 90%+ satisfaction in technical training and awareness sessions.",
         socials: {
             github: "https://github.com/kinza099",
             linkedin: "https://linkedin.com/in/kinza-bughio-782777279",
@@ -22,8 +22,7 @@ const HTB_DATA = {
         },
         languages: [
             { name: "English", level: "Full Professional Proficiency" },
-            { name: "Urdu", level: "Fluent" },
-            { name: "Sindhi", level: "Native" }
+            { name: "Urdu", level: "Fluent" }
         ]
     },
 
@@ -31,7 +30,7 @@ const HTB_DATA = {
         { label: "Technical Projects", value: 9, icon: "terminal", suffix: "" },
         { label: "Certifications", value: 12, icon: "workspace_premium", suffix: "" },
         { label: "Professional Roles", value: 5, icon: "work", suffix: "" },
-        { label: "Student Satisfaction", value: 90, icon: "star", suffix: "%+" }
+        { label: "Comprehension Boost", value: 35, icon: "trending_up", suffix: "%" }
     ],
 
     experience: [
@@ -105,27 +104,26 @@ const HTB_DATA = {
 
     skills: [
         {
-            category: "Cybersecurity & Security Tools",
+            category: "Ethical Hacking & Network Security",
             icon: "security",
             items: [
                 "Ethical Hacking",
                 "Network Security",
                 "Penetration Testing",
                 "Digital Forensics",
-                "Cyber Hygiene",
                 "OWASP Top 10",
+                "Vulnerability Assessment",
                 "Password Security",
                 "Nmap",
                 "Burp Suite",
                 "Wireshark",
                 "Metasploit",
                 "Kali Linux",
-                "Linux (Kali/Ubuntu)",
-                "Windows"
+                "Linux (Kali/Ubuntu)"
             ]
         },
         {
-            category: "Programming & Web Development",
+            category: "Programming & Secure Development",
             icon: "terminal",
             items: [
                 "Python",
@@ -134,39 +132,40 @@ const HTB_DATA = {
                 "MySQL",
                 "RESTful APIs",
                 "OOP (Object-Oriented Programming)",
-                "CRUD Applications",
-                "OpenCV",
+                "Secure Authentication & Session Mgmt",
+                "Windows",
                 "VS Code",
                 "XAMPP",
-                "GitHub",
-                "Hardware & Software Installation",
-                "Internet & Cloud Applications"
+                "GitHub"
             ]
         },
         {
-            category: "Pedagogical & Instructional Skills",
+            category: "Analytical & Professional Skills",
+            icon: "psychology",
+            items: [
+                "Analytical Thinking",
+                "Attention to Detail",
+                "Risk Assessment",
+                "Technical Communication",
+                "Problem-Solving",
+                "Report Writing & Documentation",
+                "Adaptability",
+                "Teamwork",
+                "Time Management",
+                "Punctuality & Reliability"
+            ]
+        },
+        {
+            category: "Training & Security Awareness",
             icon: "school",
             items: [
-                "Curriculum Design",
-                "Lesson Planning",
-                "1-on-1 Mentorship",
-                "Student Engagement",
-                "Student Assessment",
-                "Technical Communication",
+                "Cybersecurity Awareness Delivery",
+                "Technical Tutoring",
+                "Hands-on Lab Demonstrations",
                 "Live Code Debugging Support",
-                "Hands-on Lab Demonstrations"
-            ]
-        },
-        {
-            category: "Soft & Professional Skills",
-            icon: "groups",
-            items: [
-                "Problem-Solving",
-                "Adaptability",
-                "Teamwork & Collaboration",
-                "Time Management",
-                "Clear Communication",
-                "Punctuality & Reliability"
+                "Complex Concept Simplification",
+                "35% Comprehension Improvement",
+                "90%+ Satisfaction Track Record"
             ]
         }
     ],

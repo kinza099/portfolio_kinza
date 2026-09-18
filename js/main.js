@@ -157,11 +157,11 @@ function initTypewriter() {
     if (!el) return;
 
     const phrases = [
-        "ICT & Computer Science Teacher",
         "Cybersecurity Analyst & Instructor",
-        "BS Cyber Security @ MUET Jamshoro (2022–2026)",
         "Python & Ethical Hacking Educator",
-        "PHP / Laravel Web Developer"
+        "BS Cyber Security @ MUET Jamshoro (2022–2026)",
+        "Ethical Hacking & Penetration Testing",
+        "Network Security & Vulnerability Assessment"
     ];
 
     let phraseIndex = 0;
