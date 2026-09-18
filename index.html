@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinza Bughio // Cybersecurity Analyst & Instructor</title>
     <meta name="description" content="Official portfolio of Kinza Bughio - Cybersecurity Analyst, Instructor, and BS Cyber Security student at MUET Jamshoro.">
-    <meta name="theme-color" content="#0B0E14">
+    <meta name="theme-color" content="#050811">
 
-    <!-- Google Material Symbols & Fonts -->
+    <!-- Google Material Symbols & Modern Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/terminal.css">
+    <!-- Modern Cyber Hacker Stylesheets -->
+    <link rel="stylesheet" href="css/modern-cyber.css?v=20260918_04">
 
-    <!-- Favicon (HTB Style Hex Cube) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><polygon points=%2250,5 95,28 95,72 50,95 5,72 5,28%22 fill=%22%239FEF00%22/><polygon points=%2250,25 75,38 75,62 50,75 25,62 25,38%22 fill=%22%230B0E14%22/></svg>">
+    <!-- Favicon (Cyber Teal Hex) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><polygon points=%2250,5 95,28 95,72 50,95 5,72 5,28%22 fill=%22%2300F2FE%22/><polygon points=%2250,22 78,36 78,64 50,78 22,64 22,36%22 fill=%22%23050811%22/><circle cx=%2250%22 cy=%2250%22 r=%2210%22 fill=%22%2310B981%22/></svg>">
 </head>
 <body>
 
-    <!-- Matrix Background & Cyber Grid -->
+    <!-- Scroll Progress HUD Bar -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+    <!-- Interactive Cyber Spotlight Glow -->
+    <div class="cyber-spotlight" id="cyberSpotlight"></div>
+
+    <!-- Dynamic Cyber Matrix & Particle Canvas -->
     <canvas id="matrixCanvas"></canvas>
     <div class="cyber-grid-overlay"></div>
 
@@ -41,7 +45,7 @@
 
             <div class="nav-vpn-status">
                 <span class="status-dot"></span>
-                <span>STATUS: ONLINE // HYDERABAD, PK</span>
+                <span>STATUS: SOC ONLINE // HYD-PK</span>
             </div>
 
             <ul class="nav-links" id="navLinks">
@@ -74,19 +78,23 @@
                 <!-- Left: Operator Profile Card -->
                 <div class="player-card">
                     <div class="card-hud-header">
-                        <div class="card-hud-id">OPERATOR ID: KINZA-BUGHIO // CYBERSECURITY ANALYST</div>
+                        <div class="card-hud-id">
+                            <span class="material-symbols-outlined" style="font-size:1rem;color:var(--cyber-cyan);">shield</span>
+                            OPERATOR ID: KB-CYBER-099 // SECURITY CLEARANCE: VERIFIED
+                        </div>
                         <div class="card-hud-badges">
                             <span class="badge-tag badge-omniscient">CYBERSECURITY</span>
-                            <span class="badge-tag badge-vip">ANALYST</span>
+                            <span class="badge-tag badge-vip">ANALYST & INSTRUCTOR</span>
                         </div>
                     </div>
 
                     <div class="player-profile-row">
                         <div class="avatar-wrapper">
+                            <div class="avatar-scanner-ring"></div>
                             <div class="avatar-hex">
                                 <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80" alt="Kinza Bughio Avatar">
                             </div>
-                            <div class="avatar-overlay-rank">ACTIVE</div>
+                            <div class="avatar-overlay-rank">● SOC ACTIVE</div>
                         </div>
 
                         <div class="player-details">
@@ -106,87 +114,129 @@
                     <!-- Education Bar -->
                     <div class="rank-progress-block">
                         <div class="rank-labels">
-                            <span class="rank-curr" style="display:inline-flex;align-items:center;gap:0.3rem;">
-                                <span class="material-symbols-outlined" style="font-size:1.1rem;">school</span>
+                            <span class="rank-curr" style="display:inline-flex;align-items:center;gap:0.4rem;">
+                                <span class="material-symbols-outlined" style="font-size:1.15rem;">school</span>
                                 BS IN CYBER SECURITY
                             </span>
-                            <span class="rank-next">2022 – 2026</span>
+                            <span class="rank-next">2022 – 2026 // CANDIDATE</span>
                         </div>
-                        <div style="font-family:var(--font-mono);font-size:0.82rem;color:#FFF;margin-top:0.25rem;">
+                        <div style="font-family:var(--font-mono);font-size:0.86rem;color:#FFF;margin-top:0.25rem;">
                             Mehran University of Engineering and Technology (MUET), Jamshoro
                         </div>
-                        <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.35rem;line-height:1.4;">
-                            <strong style="color:var(--htb-cyan);">Coursework:</strong> Network Security, Ethical Hacking, Digital Forensics, Cryptography, Operating Systems, Web Application Security, Database Management.
+                        <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.45rem;line-height:1.5;">
+                            <strong style="color:var(--cyber-cyan);">Specialized Coursework:</strong> Network Security, Ethical Hacking, Digital Forensics, Cryptography, Operating Systems, Web Application Security, Database Management.
                         </div>
                     </div>
 
                     <!-- CTAs -->
                     <div class="hero-cta-group">
                         <a href="#contact" class="htb-btn htb-btn-primary">
-                            <span class="material-symbols-outlined" style="font-size:1.1rem;">send</span>
+                            <span class="material-symbols-outlined" style="font-size:1.15rem;">send</span>
                             CONNECT / HIRE
                         </a>
                         <a href="#projects" class="htb-btn htb-btn-secondary">
-                            <span class="material-symbols-outlined" style="font-size:1.1rem;">code</span>
+                            <span class="material-symbols-outlined" style="font-size:1.15rem;">code</span>
                             VIEW 9 PROJECTS
                         </a>
+                        <button class="htb-btn htb-btn-secondary" onclick="window.print()" title="Print / Save Official Intel Dossier">
+                            <span class="material-symbols-outlined" style="font-size:1.15rem;">description</span>
+                            DOSSIER / CV
+                        </button>
                         <a href="#terminal" class="htb-btn htb-btn-accent">
-                            <span class="material-symbols-outlined" style="font-size:1.1rem;">terminal</span>
+                            <span class="material-symbols-outlined" style="font-size:1.15rem;">terminal</span>
                             SPAWN TERMINAL
                         </a>
                     </div>
                 </div>
 
                 <!-- Right: Quick Dossier & Telemetry -->
-                <div class="spec-telemetry" style="display:flex;flex-direction:column;gap:1.5rem;">
-                    <div class="player-card" style="padding:1.5rem;">
-                        <div class="card-hud-header" style="margin-bottom:1rem;">
-                            <span class="card-hud-id">CONTACT TELEMETRY</span>
-                            <span class="flag-badge flag-pwned" style="font-size:0.65rem;">VERIFIED</span>
+                <div class="spec-telemetry">
+                    <div class="telemetry-card">
+                        <div class="card-hud-header" style="margin-bottom:1.1rem;">
+                            <span class="card-hud-id">
+                                <span class="material-symbols-outlined" style="font-size:1rem;color:var(--cyber-emerald);">sensors</span>
+                                LIVE TELEMETRY & COMMS
+                            </span>
+                            <span class="badge-tag badge-vip" style="font-size:0.65rem;">ONLINE</span>
                         </div>
-                        <div style="font-family:var(--font-mono);font-size:0.84rem;line-height:2.2;color:var(--text-secondary);">
-                            <div style="display:flex;align-items:center;gap:0.4rem;">
-                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-green);">mail</span>
-                                <span>EMAIL:</span> 
-                                <a href="mailto:kinzapython@gmail.com" style="color:var(--htb-green);">kinzapython@gmail.com</a>
+                        <div style="display:flex;flex-direction:column;gap:0.25rem;">
+                            <div class="telemetry-item">
+                                <span class="material-symbols-outlined" style="font-size:1.2rem;color:var(--cyber-cyan);">mail</span>
+                                <span class="telemetry-label">EMAIL:</span> 
+                                <a href="mailto:kinzapython@gmail.com" class="telemetry-value" style="color:var(--cyber-cyan);">kinzapython@gmail.com</a>
                             </div>
-                            <div style="display:flex;align-items:center;gap:0.4rem;">
-                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-green);">location_on</span>
-                                <span>LOCATION:</span> 
-                                <span style="color:#FFF;">Hyderabad, Sindh, Pakistan</span>
+                            <div class="telemetry-item">
+                                <span class="material-symbols-outlined" style="font-size:1.2rem;color:var(--cyber-emerald);">location_on</span>
+                                <span class="telemetry-label">LOCATION:</span> 
+                                <span class="telemetry-value">Hyderabad, Sindh, Pakistan</span>
                             </div>
-                            <div style="display:flex;align-items:center;gap:0.4rem;">
-                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-cyan);">terminal</span>
-                                <span>GITHUB:</span> 
-                                <a href="https://github.com/kinza099" target="_blank" style="color:var(--htb-cyan);">github.com/kinza099</a>
+                            <div class="telemetry-item">
+                                <span class="material-symbols-outlined" style="font-size:1.2rem;color:var(--cyber-cyan);">terminal</span>
+                                <span class="telemetry-label">GITHUB:</span> 
+                                <a href="https://github.com/kinza099" target="_blank" class="telemetry-value">github.com/kinza099</a>
                             </div>
-                            <div style="display:flex;align-items:center;gap:0.4rem;">
-                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-cyan);">business_center</span>
-                                <span>LINKEDIN:</span> 
-                                <a href="https://linkedin.com/in/kinza-bughio-782777279" target="_blank" style="color:var(--htb-cyan);">linkedin.com/in/kinza-bughio-782777279</a>
+                            <div class="telemetry-item">
+                                <span class="material-symbols-outlined" style="font-size:1.2rem;color:var(--cyber-purple);">business_center</span>
+                                <span class="telemetry-label">LINKEDIN:</span> 
+                                <a href="https://linkedin.com/in/kinza-bughio-782777279" target="_blank" class="telemetry-value">kinza-bughio</a>
                             </div>
-                            <div style="display:flex;align-items:center;gap:0.4rem;">
-                                <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--htb-green);">verified</span>
-                                <span>EXPERIENCE:</span> 
-                                <span style="color:var(--htb-green);">3+ Years Security & Tech Roles</span>
+                            <div class="telemetry-item">
+                                <span class="material-symbols-outlined" style="font-size:1.2rem;color:var(--cyber-emerald);">verified</span>
+                                <span class="telemetry-label">EXPERIENCE:</span> 
+                                <span class="telemetry-value" style="color:var(--cyber-emerald);font-weight:700;">3+ Years Cyber & Teaching</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="player-card" style="padding:1.5rem;background:#0D1117;">
-                        <div class="card-hud-header" style="margin-bottom:0.75rem;">
-                            <span class="card-hud-id">FAST TERMINAL SHELL</span>
-                            <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--htb-green);">BASH 5.2</span>
+                    <!-- Security Readiness Gauge Card -->
+                    <div class="defense-gauge-card">
+                        <div class="card-hud-header" style="margin-bottom:0.9rem;">
+                            <span class="card-hud-id">
+                                <span class="material-symbols-outlined" style="font-size:1rem;color:var(--cyber-cyan);">security</span>
+                                SECURITY POSTURE & DEFENSE READINESS
+                            </span>
+                            <span class="badge-tag badge-omniscient" style="font-size:0.65rem;">ALPHA 100%</span>
                         </div>
-                        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">
-                            Run automated queries against Kinza's profile in the interactive terminal:
+                        <div>
+                            <div class="defense-metric-row">
+                                <span style="color:var(--text-secondary);">Penetration Testing & Network Scans</span>
+                                <span style="color:var(--cyber-cyan);font-weight:700;">96%</span>
+                            </div>
+                            <div class="defense-track"><div class="defense-fill" style="width:96%;"></div></div>
+
+                            <div class="defense-metric-row">
+                                <span style="color:var(--text-secondary);">OWASP Top 10 Web App Defense</span>
+                                <span style="color:var(--cyber-emerald);font-weight:700;">94%</span>
+                            </div>
+                            <div class="defense-track"><div class="defense-fill" style="width:94%;background:linear-gradient(90deg, var(--cyber-emerald), var(--cyber-cyan));"></div></div>
+
+                            <div class="defense-metric-row">
+                                <span style="color:var(--text-secondary);">Technical Instruction & Comprehension</span>
+                                <span style="color:var(--cyber-purple);font-weight:700;">+35% Boost</span>
+                            </div>
+                            <div class="defense-track"><div class="defense-fill" style="width:92%;background:linear-gradient(90deg, var(--cyber-purple), var(--cyber-cyan));"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="quick-shell-card">
+                        <div class="card-hud-header" style="margin-bottom:0.85rem;">
+                            <span class="card-hud-id">
+                                <span class="material-symbols-outlined" style="font-size:1rem;color:var(--cyber-cyan);">terminal</span>
+                                FAST CLI AUTOMATION
+                            </span>
+                            <span style="font-family:var(--font-mono);font-size:0.72rem;color:var(--cyber-emerald);">BASH 5.2</span>
+                        </div>
+                        <p style="font-size:0.86rem;color:var(--text-secondary);margin-bottom:1.15rem;line-height:1.5;">
+                            Dispatch direct command triggers to the integrated in-browser security terminal:
                         </p>
-                        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                        <div style="display:flex;gap:0.55rem;flex-wrap:wrap;">
                             <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('whoami');">whoami</button>
                             <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('experience');">experience</button>
                             <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('projects');">projects</button>
                             <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('certs');">certs</button>
-                            <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('nmap');">nmap scan</button>
+                            <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('tools');">tools</button>
+                            <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('scan');">vuln scan</button>
+                            <button class="quick-cmd-btn" onclick="document.getElementById('terminal').scrollIntoView({behavior:'smooth'}); window.terminal.execute('flag');">ctf flag</button>
                         </div>
                     </div>
                 </div>
@@ -208,9 +258,12 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-title-wrap">
-                    <span class="section-tag">[02 // WORK EXPERIENCE & ROLES]</span>
+                    <span class="section-tag">
+                        <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--cyber-cyan);">history</span>
+                        [02 // OPERATIONAL CHRONOLOGY & ROLES]
+                    </span>
                     <h2 class="section-heading">Professional Experience</h2>
-                    <p class="section-desc">University-level tutoring, national technical training instruction, cybersecurity internships, and web development.</p>
+                    <p class="section-desc">University-level tutoring, national technical training instruction, cybersecurity internships, and secure web application development.</p>
                 </div>
             </div>
 
@@ -223,13 +276,16 @@
     <!-- ==========================================================================
          PROJECTS PORTFOLIO (ALL 9 PROJECTS)
          ========================================================================== -->
-    <section class="section-wrapper" id="projects" style="background:rgba(17, 25, 39, 0.4);">
+    <section class="section-wrapper" id="projects">
         <div class="container">
             <div class="section-header">
                 <div class="section-title-wrap">
-                    <span class="section-tag">[03 // TECHNICAL PROJECTS]</span>
+                    <span class="section-tag">
+                        <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--cyber-cyan);">folder_data</span>
+                        [03 // SECURITY TOOLS & REPOSITORIES]
+                    </span>
                     <h2 class="section-heading">Technical Projects Portfolio</h2>
-                    <p class="section-desc">Security tools, educational demos, Python Flask systems, and full-stack PHP/MySQL platforms from CV.</p>
+                    <p class="section-desc">Security testing tools, educational exploit demonstrations, Python Flask systems, and full-stack PHP/MySQL platforms from CV.</p>
                 </div>
             </div>
 
@@ -256,9 +312,12 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-title-wrap">
-                    <span class="section-tag">[04 // SKILLS INVENTORY]</span>
+                    <span class="section-tag">
+                        <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--cyber-cyan);">build</span>
+                        [04 // DEFENSE & TECHNICAL PROFICIENCIES]
+                    </span>
                     <h2 class="section-heading">Technical & Teaching Skills</h2>
-                    <p class="section-desc">Full breakdown of technical proficiencies, cybersecurity tools, and instructional capabilities from CV.</p>
+                    <p class="section-desc">Full breakdown of cybersecurity tools, penetration testing capabilities, system engineering, and pedagogical skills from CV.</p>
                 </div>
             </div>
 
@@ -271,13 +330,16 @@
     <!-- ==========================================================================
          CERTIFICATES (ALL 12 FROM CV)
          ========================================================================== -->
-    <section class="section-wrapper" id="certs" style="background:rgba(17, 25, 39, 0.4);">
+    <section class="section-wrapper" id="certs">
         <div class="container">
             <div class="section-header">
                 <div class="section-title-wrap">
-                    <span class="section-tag">[05 // ACCREDITED CREDENTIALS]</span>
+                    <span class="section-tag">
+                        <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--cyber-cyan);">verified_user</span>
+                        [05 // ACCREDITED DEFENSE CREDENTIALS]
+                    </span>
                     <h2 class="section-heading">Certifications & Learning Paths</h2>
-                    <p class="section-desc">12 verified credentials across Google, Credly, TryHackMe, HackerRank, MUET, and the U.S. State Department.</p>
+                    <p class="section-desc">12 verified credentials across Google, Credly, TryHackMe, HackerRank, MUET Jamshoro, and the U.S. State Department.</p>
                 </div>
             </div>
 
@@ -294,9 +356,12 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-title-wrap">
-                    <span class="section-tag">[06 // INTERACTIVE SHELL]</span>
+                    <span class="section-tag">
+                        <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--cyber-cyan);">terminal</span>
+                        [06 // BASH SHELL EMULATOR]
+                    </span>
                     <h2 class="section-heading">In-Browser Terminal Emulator</h2>
-                    <p class="section-desc">Interact directly with Kinza's command-line interface to inspect education, experience, and projects.</p>
+                    <p class="section-desc">Interact directly with Kinza's command-line interface to inspect education, experience, project source code, and scanner demos.</p>
                 </div>
             </div>
 
@@ -310,7 +375,11 @@
                 <button class="quick-cmd-btn" data-cmd="projects">projects</button>
                 <button class="quick-cmd-btn" data-cmd="skills">skills</button>
                 <button class="quick-cmd-btn" data-cmd="certs">certs</button>
+                <button class="quick-cmd-btn" data-cmd="tools">tools</button>
+                <button class="quick-cmd-btn" data-cmd="scan">scan</button>
                 <button class="quick-cmd-btn" data-cmd="nmap">nmap</button>
+                <button class="quick-cmd-btn" data-cmd="status">status</button>
+                <button class="quick-cmd-btn" data-cmd="flag">flag</button>
                 <button class="quick-cmd-btn" data-cmd="contact">contact</button>
                 <button class="quick-cmd-btn" data-cmd="clear">clear</button>
             </div>
@@ -324,11 +393,11 @@
                         <span class="terminal-btn btn-maximize"></span>
                     </div>
                     <div class="terminal-title">
-                        <span>kinza@htb-terminal: ~ (bash 5.2)</span>
+                        <span>kinza@defense-terminal: ~ (bash 5.2)</span>
                     </div>
                     <div class="terminal-tabs">
                         <span class="term-tab">bash</span>
-                        <span class="term-tab" style="color:var(--text-muted);">zsh</span>
+                        <span class="term-tab" style="color:var(--text-muted);border-color:transparent;">zsh</span>
                     </div>
                 </div>
 
@@ -336,7 +405,7 @@
                     <div id="terminalOutput"></div>
                     <div class="terminal-input-row">
                         <div class="term-prompt">
-                            <span class="term-prompt-user">kinza</span>@<span class="term-prompt-host">htb-terminal</span>:<span class="term-prompt-char">~$</span>
+                            <span class="term-prompt-user">kinza</span>@<span class="term-prompt-host">defense-terminal</span>:<span class="term-prompt-char">~$</span>
                         </div>
                         <input type="text" id="terminalInput" class="term-input" autocomplete="off" spellcheck="false" placeholder="Type command here (e.g. help, whoami, projects, experience)..." autofocus>
                     </div>
@@ -352,9 +421,12 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-title-wrap">
-                    <span class="section-tag">[07 // DIRECT COMMUNICATION]</span>
+                    <span class="section-tag">
+                        <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--cyber-cyan);">alternate_email</span>
+                        [07 // SECURE COMMUNICATION CHANNELS]
+                    </span>
                     <h2 class="section-heading">Contact & Connect</h2>
-                    <p class="section-desc">Reach out for cybersecurity positions, penetration testing engagements, technical workshops, or software development.</p>
+                    <p class="section-desc">Reach out for cybersecurity analyst positions, penetration testing, technical training sessions, or software collaborations.</p>
                 </div>
             </div>
 
@@ -362,27 +434,27 @@
                 <!-- Left: Form -->
                 <div class="contact-terminal-box">
                     <div class="contact-cmd-lead">
-                        $ mail -s "Cybersecurity / Technical Opportunity" kinzapython@gmail.com
+                        $ gpg --encrypt --recipient kinzapython@gmail.com
                     </div>
 
                     <form id="contactForm" action="https://formspree.io/f/mrpbgqop" method="POST">
                         <div class="form-group">
-                            <label class="form-label" for="contactName">// YOUR NAME</label>
-                            <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g., Department Head / Recruiter" required>
+                            <label class="form-label" for="contactName">// YOUR NAME OR ORGANIZATION</label>
+                            <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g., Security Lead / Academic Director" required>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="contactEmail">// YOUR EMAIL</label>
-                            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="e.g., academic@institution.edu.pk" required>
+                            <label class="form-label" for="contactEmail">// DIRECT EMAIL ADDRESS</label>
+                            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="e.g., secops@institution.edu.pk" required>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="contactMsg">// MESSAGE</label>
-                            <textarea id="contactMsg" name="message" class="form-textarea" placeholder="Send a message regarding cybersecurity positions, security assessments, or technical collaborations..." required></textarea>
+                            <label class="form-label" for="contactMsg">// TRANSMISSION DETAILS</label>
+                            <textarea id="contactMsg" name="message" class="form-textarea" placeholder="Provide details regarding security roles, workshops, penetration testing, or teaching collaborations..." required></textarea>
                         </div>
 
                         <button type="submit" class="htb-btn htb-btn-primary" style="width:100%;justify-content:center;">
-                            TRANSMIT MESSAGE →
+                            DISPATCH SECURE TRANSMISSION →
                         </button>
                     </form>
 
@@ -394,7 +466,7 @@
                     <div>
                         <div class="contact-card-item">
                             <div class="contact-icon">
-                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--htb-green);">mail</span>
+                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--cyber-cyan);">mail</span>
                             </div>
                             <div>
                                 <div class="contact-label">EMAIL ADDRESS</div>
@@ -404,17 +476,17 @@
 
                         <div class="contact-card-item">
                             <div class="contact-icon">
-                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--htb-green);">location_on</span>
+                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--cyber-emerald);">location_on</span>
                             </div>
                             <div>
-                                <div class="contact-label">LOCATION</div>
+                                <div class="contact-label">PRIMARY LOCATION</div>
                                 <span class="contact-val">Hyderabad, Sindh, Pakistan</span>
                             </div>
                         </div>
 
                         <div class="contact-card-item">
                             <div class="contact-icon">
-                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--htb-cyan);">business_center</span>
+                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--cyber-purple);">business_center</span>
                             </div>
                             <div>
                                 <div class="contact-label">LINKEDIN PROFILE</div>
@@ -424,7 +496,7 @@
 
                         <div class="contact-card-item">
                             <div class="contact-icon">
-                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--htb-cyan);">terminal</span>
+                                <span class="material-symbols-outlined" style="font-size:1.8rem;color:var(--cyber-cyan);">terminal</span>
                             </div>
                             <div>
                                 <div class="contact-label">GITHUB REPOSITORIES</div>
@@ -435,9 +507,9 @@
 
                     <!-- Languages -->
                     <div style="margin-top:1rem;">
-                        <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--htb-green);margin-bottom:0.5rem;text-transform:uppercase;display:flex;align-items:center;gap:0.3rem;">
-                            <span class="material-symbols-outlined" style="font-size:1rem;">translate</span>
-                            LANGUAGES PROFICIENCY:
+                        <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--cyber-cyan);margin-bottom:0.75rem;text-transform:uppercase;display:flex;align-items:center;gap:0.4rem;">
+                            <span class="material-symbols-outlined" style="font-size:1.1rem;">translate</span>
+                            COMMUNICATION PROFICIENCY:
                         </div>
                         <div id="languagesList">
                             <!-- Populated via main.js -->
@@ -455,18 +527,18 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="htb-logo-cube" style="width:24px;height:24px;">
-                        <div class="htb-logo-cube-inner" style="width:12px;height:12px;"></div>
+                    <div class="htb-logo-cube" style="width:28px;height:28px;">
+                        <div class="htb-logo-cube-inner" style="width:14px;height:14px;"></div>
                     </div>
-                    <span>KINZA BUGHIO // CYBERSECURITY ANALYST</span>
+                    <span>KINZA BUGHIO // CYBERSECURITY ANALYST & INSTRUCTOR</span>
                 </div>
                 <div class="footer-meta">
-                    THEME: HACK THE BOX • GROUNDED IN OFFICIAL CV
+                    CYBERSECURITY DEFENSE PORTFOLIO • AUTHENTIC CREDENTIALS & CV
                 </div>
             </div>
             <div class="footer-bottom">
                 <span>BS CYBER SECURITY (2022–2026) • MEHRAN UNIVERSITY OF ENGINEERING AND TECHNOLOGY JAMSHORO</span>
-                <span>STATUS: 200 OK</span>
+                <span style="color:var(--cyber-emerald);font-weight:700;">● STATUS: 200 OK // ZERO ERRORS</span>
             </div>
         </div>
     </footer>
@@ -480,9 +552,14 @@
         </div>
     </div>
 
+    <!-- Floating Back To Top Cyber Button -->
+    <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top" title="Jump to HUD Profile">
+        <span class="material-symbols-outlined" style="font-size:1.5rem;">arrow_upward</span>
+    </button>
+
     <!-- Scripts with Cache-Buster -->
-    <script src="js/data.js?v=20260918_01"></script>
-    <script src="js/terminal.js?v=20260918_01"></script>
-    <script src="js/main.js?v=20260918_01"></script>
+    <script src="js/data.js?v=20260918_03"></script>
+    <script src="js/terminal.js?v=20260918_03"></script>
+    <script src="js/main.js?v=20260918_03"></script>
 </body>
 </html>

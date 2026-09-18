@@ -44,6 +44,22 @@ class HtbTerminal {
                 desc: "Run demonstration of Kinza's Python Nmap Scanner",
                 action: (args) => this.cmdNmap(args)
             },
+            tools: {
+                desc: "Display cybersecurity tools and assessment arsenal",
+                action: () => this.cmdTools()
+            },
+            scan: {
+                desc: "Run live simulated network port & vulnerability scan",
+                action: () => this.cmdScan()
+            },
+            status: {
+                desc: "Check live system telemetry, SOC defense state & uptime",
+                action: () => this.cmdStatus()
+            },
+            flag: {
+                desc: "Capture The Flag (CTF) security secret",
+                action: () => this.cmdFlag()
+            },
             contact: {
                 desc: "Print email, location, LinkedIn, and GitHub",
                 action: () => this.cmdContact()
@@ -102,7 +118,7 @@ class HtbTerminal {
         const cmdName = parts[0]?.toLowerCase();
         const args = parts.slice(1);
 
-        this.println(`kinza@htb-terminal:~$ ${rawInput}`, "term-line-info");
+        this.println(`kinza@defense-terminal:~$ ${rawInput}`, "term-line-info");
 
         if (window.soundFX) window.soundFX.playKey();
 
@@ -260,6 +276,58 @@ COURSEWORK  : ${ed.coursework}
         this.println(`3306/tcp open  mysql         MySQL Community Server 8.0`);
         this.println(`-----------------------------------------------------`);
         this.println(`[+] Scan complete. Host is up with active web & database services.`, "term-line-success");
+    }
+
+    cmdTools() {
+        const text = `
+------------------------------------------------------------
+[CYBERSECURITY ARSENAL & TOOLKIT]
+------------------------------------------------------------
+RECON & NETWORK       : Nmap, Zenmap, Wireshark, Netcat, Scapy
+WEB APP SECURITY      : Burp Suite, OWASP ZAP, Postman, SQLmap
+EXPLOITATION & LABS   : Metasploit Framework, Kali Linux, Exploit-DB
+DEFENSE & MONITORING  : Snort, Suricata, Linux IPTables, UFW
+PROGRAMMING & SCRIPT  : Python (Socket, Scapy, Requests), Bash, PHP, Flask
+DATABASES & SECURE DB : MySQL, PostgreSQL, SQLite, phpMyAdmin
+PEDAGOGY & TRAINING   : Live Mentoring, Vulnerability Workshops, CVE Labs
+------------------------------------------------------------`;
+        this.println(text, "term-line-info");
+    }
+
+    cmdScan() {
+        this.println("<span class=\"term-line-warning\">[~] Initializing SYN Stealth Scan against target defense node (192.168.1.99)...</span>");
+        setTimeout(() => {
+            this.println("<span class=\"term-line-info\">[+] Host is up (0.0018s latency). Scan report for 192.168.1.99:</span>");
+            this.println("PORT     STATE SERVICE       VERSION");
+            this.println("22/tcp   open  ssh           OpenSSH 9.3p1 (Protocol 2.0)");
+            this.println("80/tcp   open  http          Nginx 1.24.0 [OWASP Headers Enforced]");
+            this.println("443/tcp  open  ssl/https     TLSv1.3 (Cipher: TLS_AES_256_GCM_SHA384)");
+            this.println("3306/tcp closed mysql         Filtered by Firewall Rule");
+            this.println("8080/tcp open  http-proxy    Flask / Gunicorn Gateway");
+            this.println("<span class=\"term-line-success\">[✓] Nmap done: 1 IP address (1 host up) scanned in 0.42 seconds. Zero critical CVEs found.</span>");
+            if (window.soundFX) window.soundFX.playSuccess();
+        }, 300);
+    }
+
+    cmdStatus() {
+        const text = `
+------------------------------------------------------------
+[SYSTEM & SOC TELEMETRY]
+------------------------------------------------------------
+SOC DEFENSE LEVEL : <span class="term-line-success">ALPHA (100% OPERATIONAL)</span>
+GATEWAY LATENCY   : 14ms (Direct Node PK-HYD)
+ENCRYPTION STATUS : AES-256-GCM / SHA-384
+AUTHENTICATED OPER: KINZA BUGHIO (BS CYBER SECURITY MUET)
+SECURITY AUDITS   : OWASP Top 10 • Penetration Testing • Network Defense
+STATUS CODES      : 200 OK // ZERO COMPROMISES
+------------------------------------------------------------`;
+        this.println(text);
+    }
+
+    cmdFlag() {
+        this.println("<span class=\"term-line-flag\">🚩 CTF FLAG CAPTURED: CTF{k1nz4_bugh10_cyb3r_4n4ly5t_2026}</span>");
+        this.println("<span class=\"term-line-success\">[+] Security verification clearance granted to operator.</span>");
+        if (window.soundFX) window.soundFX.playSuccess();
     }
 
     cmdContact() {

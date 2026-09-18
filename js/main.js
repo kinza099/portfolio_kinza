@@ -37,10 +37,10 @@ class SoundFX {
         const btn = document.getElementById("soundToggleBtn");
         if (btn) {
             btn.innerHTML = this.enabled 
-                ? '<span class="material-symbols-outlined" style="font-size:1.1rem;">volume_up</span> SFX: ON' 
+                ? '<span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--cyber-cyan);">volume_up</span> SFX: ON <span class="sound-equalizer"><span class="sound-bar"></span><span class="sound-bar"></span><span class="sound-bar"></span><span class="sound-bar"></span></span>' 
                 : '<span class="material-symbols-outlined" style="font-size:1.1rem;">volume_off</span> SFX: OFF';
-            btn.style.color = this.enabled ? "var(--htb-green)" : "var(--text-muted)";
-            btn.style.borderColor = this.enabled ? "var(--htb-green)" : "var(--border-color)";
+            btn.style.color = this.enabled ? "var(--cyber-cyan)" : "var(--text-muted)";
+            btn.style.borderColor = this.enabled ? "var(--cyber-cyan)" : "var(--border-color)";
         }
     }
 
@@ -118,10 +118,9 @@ class MatrixCanvas {
 
     loop() {
         if (!this.active) return;
-        this.ctx.fillStyle = "rgba(11, 14, 20, 0.08)";
+        this.ctx.fillStyle = "rgba(5, 8, 17, 0.12)";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-        this.ctx.fillStyle = "#9FEF00";
         this.ctx.font = `${this.fontSize}px 'JetBrains Mono', monospace`;
 
         for (let i = 0; i < this.drops.length; i++) {
@@ -129,10 +128,13 @@ class MatrixCanvas {
             const x = i * this.fontSize;
             const y = this.drops[i] * this.fontSize;
 
-            if (Math.random() > 0.95) {
+            const rand = Math.random();
+            if (rand > 0.95) {
                 this.ctx.fillStyle = "#FFFFFF";
+            } else if (rand > 0.55) {
+                this.ctx.fillStyle = "rgba(0, 242, 254, 0.75)";
             } else {
-                this.ctx.fillStyle = "rgba(159, 239, 0, 0.75)";
+                this.ctx.fillStyle = "rgba(16, 185, 129, 0.65)";
             }
 
             this.ctx.fillText(text, x, y);
@@ -246,13 +248,16 @@ function renderExperience() {
     const container = document.getElementById("experienceContainer");
     if (!container) return;
 
-    container.innerHTML = HTB_DATA.experience.map(exp => `
+    container.innerHTML = HTB_DATA.experience.map((exp, idx) => `
         <div class="experience-card">
             <div class="exp-header">
                 <div>
+                    <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--cyber-cyan);letter-spacing:0.12em;margin-bottom:0.35rem;">
+                        [OPERATIONAL DEPLOYMENT 0${idx + 1} // AUTH_VERIFIED]
+                    </div>
                     <h3 class="exp-role">${exp.role}</h3>
                     <div class="exp-org">
-                        <span style="color:var(--htb-green);">${exp.organization}</span> • ${exp.location}
+                        <span style="color:var(--cyber-emerald);font-weight:600;">${exp.organization}</span> • <span style="color:var(--text-muted);">${exp.location}</span>
                     </div>
                 </div>
                 <span class="exp-date-pill">${exp.duration}</span>
@@ -417,16 +422,20 @@ function renderCertifications() {
     container.innerHTML = HTB_DATA.certifications.map(c => `
         <div class="cert-card">
             <div>
-                <div class="cert-badge-top" style="color:${c.color};font-size:1.15rem;display:flex;align-items:center;gap:0.4rem;">
-                    <span class="material-symbols-outlined" style="font-size:1.3rem;">verified</span>
+                <div class="cert-badge-top" style="color:#FFFFFF;font-size:1.1rem;display:flex;align-items:flex-start;gap:0.55rem;">
+                    <span class="material-symbols-outlined" style="font-size:1.35rem;color:var(--cyber-cyan);flex-shrink:0;">verified</span>
                     <span>${c.title}</span>
                 </div>
                 <div class="cert-issuer">
-                    <strong>Issued by:</strong> ${c.issuer}
+                    <span style="color:var(--text-muted);">Issuing Authority:</span> 
+                    <strong style="color:var(--cyber-emerald);">${c.issuer}</strong>
                 </div>
             </div>
             <div class="cert-footer">
-                <span class="cert-id" style="color:var(--htb-green);font-weight:700;">VERIFIED</span>
+                <span class="cert-id" style="color:var(--cyber-cyan);font-weight:700;display:inline-flex;align-items:center;gap:0.35rem;">
+                    <span style="width:6px;height:6px;border-radius:50%;background:var(--cyber-cyan);box-shadow:0 0 6px var(--cyber-cyan);"></span>
+                    VERIFIED CREDENTIAL
+                </span>
                 <span class="cert-status" style="color:var(--text-muted);">${c.date}</span>
             </div>
         </div>
@@ -441,9 +450,12 @@ function renderLanguages() {
     if (!container) return;
 
     container.innerHTML = HTB_DATA.profile.languages.map(l => `
-        <div style="background:var(--bg-card);border:1px solid var(--border-color);padding:0.75rem 1rem;border-radius:4px;margin-bottom:0.5rem;display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.85rem;">
-            <span style="color:#FFF;">${l.name}</span>
-            <span style="color:var(--htb-green);">${l.level}</span>
+        <div style="background:rgba(7, 11, 20, 0.8);border:1px solid var(--border-color);padding:0.85rem 1.15rem;border-radius:var(--radius-sm);margin-bottom:0.65rem;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:0.85rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--cyber-cyan);box-shadow:0 0 6px var(--cyber-cyan);"></span>
+                <span style="color:#FFF;font-weight:600;">${l.name}</span>
+            </div>
+            <span style="color:var(--cyber-emerald);font-size:0.76rem;background:rgba(16, 185, 129, 0.1);padding:0.25rem 0.75rem;border-radius:var(--radius-full);border:1px solid rgba(16, 185, 129, 0.35);font-weight:700;">${l.level}</span>
         </div>
     `).join("");
 }
@@ -537,7 +549,78 @@ function initContactForm() {
 }
 
 // ==========================================================================
-// 10. INITIALIZATION
+// 10. ADVANCED CYBER HUD EFFECTS (SPOTLIGHT, CLOCK, SCROLL PROGRESS)
+// ==========================================================================
+function initCyberSpotlight() {
+    const spotlight = document.getElementById("cyberSpotlight");
+    if (!spotlight || window.matchMedia("(pointer: coarse)").matches) return;
+
+    let targetX = window.innerWidth / 2;
+    let targetY = window.innerHeight / 2;
+    let currentX = targetX;
+    let currentY = targetY;
+
+    window.addEventListener("mousemove", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+    });
+
+    function render() {
+        currentX += (targetX - currentX) * 0.15;
+        currentY += (targetY - currentY) * 0.15;
+        spotlight.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+        requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+}
+
+function initLiveClock() {
+    const clockEl = document.getElementById("liveClock");
+    if (!clockEl) return;
+
+    function update() {
+        const now = new Date();
+        const hours = String(now.getUTCHours()).padStart(2, "0");
+        const minutes = String(now.getUTCMinutes()).padStart(2, "0");
+        const seconds = String(now.getUTCSeconds()).padStart(2, "0");
+        clockEl.textContent = `${hours}:${minutes}:${seconds} UTC`;
+    }
+    update();
+    setInterval(update, 1000);
+}
+
+function initScrollProgressAndBackToTop() {
+    const progressBar = document.getElementById("scrollProgressBar");
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+        if (progressBar) {
+            progressBar.style.width = `${progress}%`;
+        }
+
+        if (backToTopBtn) {
+            if (scrollTop > 400) {
+                backToTopBtn.classList.add("visible");
+            } else {
+                backToTopBtn.classList.remove("visible");
+            }
+        }
+    }, { passive: true });
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            if (window.soundFX) window.soundFX.playClick(800);
+        });
+    }
+}
+
+// ==========================================================================
+// 11. INITIALIZATION
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
     window.soundFX = new SoundFX();
@@ -554,6 +637,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.matrixBg = new MatrixCanvas("matrixCanvas");
 
+    initCyberSpotlight();
+    initLiveClock();
+    initScrollProgressAndBackToTop();
     initTypewriter();
     renderStats();
     renderExperience();
