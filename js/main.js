@@ -160,6 +160,7 @@ function initTypewriter() {
 
     const phrases = [
         "Cybersecurity Analyst & Instructor",
+        "IT Professional",
         "Python & Ethical Hacking Educator",
         "BS Cyber Security @ MUET Jamshoro (2022–2026)",
         "Ethical Hacking & Penetration Testing",

@@ -14,7 +14,7 @@ const HTB_DATA = {
         university: "Mehran University of Engineering and Technology (MUET), Jamshoro",
         duration: "2022 – 2026",
         coursework: "Network Security, Ethical Hacking, Digital Forensics, Cryptography, Operating Systems, Web Application Security, Database Management",
-        bio: "Detail-oriented Cybersecurity Analyst with 3+ years of hands-on experience across network security, ethical hacking, penetration testing, and secure application development. Skilled in identifying vulnerabilities, analyzing security risks, and applying industry-standard tools — including Nmap, Burp Suite, Wireshark, Metasploit, and Kali Linux — to strengthen system and application security. Strong foundation in the OWASP Top 10, digital forensics, and secure coding practices (input validation, session management, CSRF/SQLi/XSS prevention), backed by a Bachelor's degree in Cyber Security. Holds a Google Cybersecurity Professional Certificate and Certified Ethical Hacker (Credly) credentials. Proven ability to translate complex security concepts into clear, actionable guidance, with a track record of improving audience comprehension by 35% and achieving 90%+ satisfaction in technical training and awareness sessions.",
+        bio: "Detail-oriented Cybersecurity Analyst with 3+ years of teaching and practical experience in cybersecurity, computer science, ICT, programming, and networking. Skilled in ethical hacking, penetration testing, secure coding, vulnerability assessment, and tools including Nmap, Burp Suite, Wireshark, Metasploit, and Kali Linux. Strong ability to analyze security concepts and explain complex technical topics through clear, practical instruction. Holds a Bachelor's degree in Cyber Security.",
         socials: {
             github: "https://github.com/kinza099",
             linkedin: "https://linkedin.com/in/kinza-bughio-782777279",
@@ -73,7 +73,7 @@ const HTB_DATA = {
         {
             role: "Cybersecurity Intern",
             organization: "Rynex Security",
-            duration: "2026 – Present",
+            duration: "07/2026 – 09/2026",
             location: "Remote",
             highlights: [
                 "Working on real-world, simulated security projects designed to build and sharpen practical, industry-relevant skills.",

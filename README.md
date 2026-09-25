@@ -20,7 +20,7 @@ A modern, responsive, high-performance **Hack The Box (HTB)** themed portfolio s
 1. **Online Technical Tutor (University Level)** (2024 – Present | Remote / Independent)
 2. **Cybersecurity Awareness Session Facilitator** (2024 – Present | Academic Institutions Across Sindh, Pakistan)
 3. **Instructional Support Assistant (Technical Training)** (2024 – 2025 | Jamshoro | NAVTTC)
-4. **Cybersecurity Intern** (2026 – Present | Remote | Rynex Security)
+4. **Cybersecurity Intern** (07/2026 – 09/2026 | Remote | Rynex Security)
 5. **PHP / Laravel Developer** (08/2024 – 11/2024 | Icreativez Technologies)
 
 ### 3. Technical Projects (All 9 Projects)
